@@ -31,7 +31,7 @@ const googleLogin = (passport) => {
               },
               {
                 upsert: true,
-                 returnDocument: "after",
+                returnDocument: "after",
               },
             );
           }
