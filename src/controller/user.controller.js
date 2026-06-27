@@ -43,14 +43,10 @@ const registerUser = asyncHandler(async (req, res) => {
   return res
     .status(200)
     .cookie("accessToken", accessToken, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "lax",
+      httpOnly: true, secure: true , sameSite: "none"
     })
     .cookie("refreshToken", refreshToken, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "lax",
+      httpOnly: true, secure: true , sameSite: "none"
     })
     .json(
       new apiResponse(
