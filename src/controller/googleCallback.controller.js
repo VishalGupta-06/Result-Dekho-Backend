@@ -18,8 +18,8 @@ const googleCallback = asyncHandler(async (req, res) => {
     const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
 
     res.status(200)
-        .cookie("accessToken", accessToken, { httpOnly: true, secure: true })
-        .cookie("refreshToken", refreshToken, { httpOnly: true, secure: true })
+        .cookie("accessToken", accessToken, { httpOnly: true, secure: true , sameSite: "lax", })
+        .cookie("refreshToken", refreshToken, { httpOnly: true, secure: true , sameSite: "lax", })
         .redirect("http://localhost:5173/dashboard");
 
 
